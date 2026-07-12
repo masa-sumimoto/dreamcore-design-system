@@ -26,6 +26,7 @@ Successor to [masa-sumimoto/dreamcore-design-md](https://github.com/masa-sumimot
 
 - Live site: [dreamcore.xpadding.com](https://dreamcore.xpadding.com)
 - Showcase: [dreamcore.xpadding.com/showcase](https://dreamcore.xpadding.com/showcase)
+- Figma template: [Dreamcore Design System on Figma Community](https://www.figma.com/community/file/1658134948361547091)
 
 ## License
 
