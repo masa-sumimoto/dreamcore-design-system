@@ -1,26 +1,223 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+ * Dreamcore Design System — Design Tokens
+ * "Pink Bloom & Anemoia" — a permanent sunset in a dream.
+ */
+@theme {
+  /* ---------------------------------- */
+  /* Colors: Base                       */
+  /* ---------------------------------- */
+  --color-background: #fef2f2; /* Soft Blush Cream — the eternal sunset canvas */
+  --color-surface: #ffffff;
+  --color-surface-dim: #fce7f3;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  /* ---------------------------------- */
+  /* Colors: Soft Pastels               */
+  /* ---------------------------------- */
+  --color-primary: #f9a8d4; /* Soft Bloom */
+  --color-secondary: #c7e2ff; /* Sky Memory */
+  --color-lilac: #d8b4fe; /* Ethereal Lavender */
+  --color-mint: #a7ffe0; /* Distant Spring */
+  --color-gold: #fff6a0; /* Sunset Fragment */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* ---------------------------------- */
+  /* Colors: The Void                   */
+  /* ---------------------------------- */
+  --color-void: #030027; /* Shadow Realm — never use pure black */
+  --color-midnight: #151e3f; /* Deep Consciousness */
+  --color-rose: #b8336a; /* Emotional Pulse */
+
+  /* ---------------------------------- */
+  /* Colors: Functional                 */
+  /* ---------------------------------- */
+  --color-text: #151e3f;
+  --color-text-muted: #79aea3;
+  --color-action: #ffbdd9;
+
+  /* ---------------------------------- */
+  /* Typography                         */
+  /* ---------------------------------- */
+  --font-display: var(--font-instrument-serif), "Times New Roman", serif;
+  --font-sans: var(--font-inter), "Inter", sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+
+  --text-display: 3.25rem; /* 52px */
+  --text-display--line-height: 1.1;
+  --text-display-lg: 5rem; /* 80px — hero scale */
+  --text-display-lg--line-height: 1.05;
+
+  /* ---------------------------------- */
+  /* Radius: nothing sharp in a dream   */
+  /* ---------------------------------- */
+  --radius-soft: 12px;
+  --radius-dreamy: 24px;
+
+  /* ---------------------------------- */
+  /* Spacing                            */
+  /* ---------------------------------- */
+  --spacing-liminal: 48px; /* vast emptiness between content areas */
+
+  /* ---------------------------------- */
+  /* Effects: fog & glow                */
+  /* ---------------------------------- */
+  --blur-fog: 40px;
+  --shadow-float: 0 24px 48px -16px rgb(21 30 63 / 0.1);
+  --shadow-float-far: 0 40px 80px -24px rgb(21 30 63 / 0.12);
+  --shadow-glow-primary: 0 0 48px 0 rgb(249 168 212 / 0.5);
+  --shadow-glow-action: 0 0 32px 0 rgb(255 189 217 / 0.6);
+
+  /* ---------------------------------- */
+  /* Motion: slow, fluid, drifting      */
+  /* ---------------------------------- */
+  --ease-drift: cubic-bezier(0.16, 1, 0.3, 1); /* long, floating deceleration */
+  --ease-fade: cubic-bezier(0.4, 0, 0.2, 1); /* gentle crossfade */
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+/* ------------------------------------ */
+/* Fog layer — the eternal sunset       */
+/* ------------------------------------ */
+.fog-blob {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+@keyframes fog-a {
+  0%,
+  100% {
+    transform: translate3d(-6%, -4%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(9%, 7%, 0) scale(1.18);
+  }
+}
+
+@keyframes fog-b {
+  0%,
+  100% {
+    transform: translate3d(5%, 8%, 0) scale(1.1);
+  }
+  50% {
+    transform: translate3d(-8%, -5%, 0) scale(0.94);
+  }
+}
+
+@keyframes fog-c {
+  0%,
+  100% {
+    transform: translate3d(4%, -6%, 0) scale(0.96);
+  }
+  50% {
+    transform: translate3d(-7%, 5%, 0) scale(1.14);
+  }
+}
+
+@keyframes fog-d {
+  0%,
+  100% {
+    transform: translate3d(-10%, 6%, 0) scale(1.06);
+  }
+  50% {
+    transform: translate3d(8%, -8%, 0) scale(0.9);
+  }
+}
+
+.animate-fog-a {
+  animation: fog-a 36s ease-in-out infinite;
+}
+.animate-fog-b {
+  animation: fog-b 48s ease-in-out infinite;
+}
+.animate-fog-c {
+  animation: fog-c 42s ease-in-out infinite;
+}
+.animate-fog-d {
+  animation: fog-d 52s ease-in-out infinite;
+}
+
+/* Film grain — the imperfection of memory */
+.grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+}
+
+/* ------------------------------------ */
+/* Entrance — memories surfacing        */
+/* ------------------------------------ */
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.hero-rise {
+  opacity: 0;
+  animation: rise 1.6s var(--ease-drift) forwards;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 1.2s var(--ease-fade),
+    transform 1.2s var(--ease-drift);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Scroll hint — a slow breath */
+@keyframes breathe {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(10px);
+    opacity: 1;
+  }
+}
+
+.scroll-hint {
+  animation: breathe 3.6s ease-in-out infinite;
+}
+
+/* ------------------------------------ */
+/* Reduced motion: the dream stands still */
+/* ------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fog-a,
+  .animate-fog-b,
+  .animate-fog-c,
+  .animate-fog-d,
+  .scroll-hint {
+    animation: none;
+  }
+
+  .hero-rise {
+    animation: none;
+    opacity: 1;
+  }
+
+  .reveal {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
 }
