@@ -22,6 +22,15 @@ npm run dev
 
 Successor to [masa-sumimoto/dreamcore-design-md](https://github.com/masa-sumimoto/dreamcore-design-md), the DESIGN.md-based release. This project is independent of the designmd.sh registry.
 
+## Links
+
+- Live site: [dreamcore.xpadding.com](https://dreamcore.xpadding.com)
+- Showcase: [dreamcore.xpadding.com/showcase](https://dreamcore.xpadding.com/showcase)
+
+## License
+
+[MIT](./LICENSE)
+
 ## Author
 
-Designed and engineered by **Masaaki Sumimoto**.
+Designed and engineered by **Masaaki Sumimoto** — [XPADDING](https://xpadding.com).
