@@ -4,6 +4,8 @@ import DriftButton from "@/components/DriftButton";
 import FloatingCard from "@/components/FloatingCard";
 import TextInput from "@/components/TextInput";
 import StatusBadge from "@/components/StatusBadge";
+import DreamAvatar from "@/components/DreamAvatar";
+import DriftSlider from "@/components/DriftSlider";
 
 export default function ComponentsPage() {
   return (
@@ -49,7 +51,7 @@ export default function ComponentsPage() {
                   </p>
                 </div>
                 <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
-                  <h3 className="font-display text-xl text-midnight/70">Don't</h3>
+                  <h3 className="font-display text-xl text-midnight/70">Don&apos;t</h3>
                   <p className="mt-2 text-xs leading-relaxed text-midnight/70">
                     Avoid stacking multiple saturated buttons closely. In a dream, visual density causes panic; leave vast spaces around interaction points.
                   </p>
@@ -132,7 +134,7 @@ export default function ComponentsPage() {
                   </p>
                 </div>
                 <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
-                  <h3 className="font-display text-xl text-midnight/70">Don't</h3>
+                  <h3 className="font-display text-xl text-midnight/70">Don&apos;t</h3>
                   <p className="mt-2 text-xs leading-relaxed text-midnight/70">
                     Do not nest multiple hoverable cards inside one another. Floating hierarchy should never exceed two levels of depth.
                   </p>
@@ -183,9 +185,94 @@ export default function ComponentsPage() {
                   </p>
                 </div>
                 <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
-                  <h3 className="font-display text-xl text-midnight/70">Don't</h3>
+                  <h3 className="font-display text-xl text-midnight/70">Don&apos;t</h3>
                   <p className="mt-2 text-xs leading-relaxed text-midnight/70">
                     Never use heavy borders or thick dark outlines. Form fields should look like soft recesses (wells) in the canvas rather than hard physical boxes.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </Reveal>
+
+        {/* Dream Avatar Section */}
+        <Reveal>
+          <section className="flex flex-col gap-8">
+            <div className="border-b border-surface-dim pb-4">
+              <h2 className="font-display text-3xl">Dream Avatar</h2>
+              <p className="mt-2 text-sm text-midnight/60">
+                Identity markers wrapped in a soft gradient glow. The presence dot breathes while the dreamer is connected.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Preview */}
+              <FloatingCard className="flex flex-wrap items-end justify-center gap-8 py-12">
+                <DreamAvatar name="Dreamer_02" size="sm" status="stable" />
+                <DreamAvatar name="Anemoia" size="md" status="drifting" />
+                <DreamAvatar name="Void Walker" size="lg" status="void" />
+                <DreamAvatar name="Sunset" size="md" />
+              </FloatingCard>
+
+              {/* Guidelines */}
+              <div className="flex flex-col justify-center gap-4">
+                <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
+                  <h3 className="font-display text-xl text-rose">Do</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-midnight/70">
+                    Use <strong>stable</strong> (mint) for connected dreamers and <strong>void</strong> for those who have faded. Omit the status dot entirely when presence is irrelevant.
+                  </p>
+                </div>
+                <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
+                  <h3 className="font-display text-xl text-midnight/70">Don&apos;t</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-midnight/70">
+                    Do not place avatars on saturated backgrounds — the glow ring needs the quiet blush canvas to breathe.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </Reveal>
+
+        {/* Drift Slider Section */}
+        <Reveal>
+          <section className="flex flex-col gap-8">
+            <div className="border-b border-surface-dim pb-4">
+              <h2 className="font-display text-3xl">Drift Slider</h2>
+              <p className="mt-2 text-sm text-midnight/60">
+                A range control over a sky-to-bloom gradient. The glowing knob swells gently on hover, like a slow breath.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Preview */}
+              <FloatingCard className="flex flex-col gap-8 justify-center py-12">
+                <DriftSlider
+                  label="fog temperature"
+                  defaultValue={42}
+                  minLabel="sky memory"
+                  maxLabel="soft bloom"
+                />
+                <DriftSlider
+                  label="locked parameter"
+                  defaultValue={70}
+                  minLabel="min"
+                  maxLabel="max"
+                  disabled
+                />
+              </FloatingCard>
+
+              {/* Guidelines */}
+              <div className="flex flex-col justify-center gap-4">
+                <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
+                  <h3 className="font-display text-xl text-rose">Do</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-midnight/70">
+                    Label both ends with quiet uppercase mono text describing the sensory poles (e.g. <code className="font-mono text-[10px] text-rose">sky memory → soft bloom</code>), not numbers.
+                  </p>
+                </div>
+                <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
+                  <h3 className="font-display text-xl text-midnight/70">Don&apos;t</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-midnight/70">
+                    Avoid tick marks or numeric readouts beside the track. Precision belongs to machines; the dream prefers a feeling.
                   </p>
                 </div>
               </div>
@@ -221,7 +308,7 @@ export default function ComponentsPage() {
                   </p>
                 </div>
                 <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
-                  <h3 className="font-display text-xl text-midnight/70">Don't</h3>
+                  <h3 className="font-display text-xl text-midnight/70">Don&apos;t</h3>
                   <p className="mt-2 text-xs leading-relaxed text-midnight/70">
                     Avoid using badges for non-status text labels. If you need tags, use static uppercase mono text instead of a pill with an active pulsing indicator.
                   </p>

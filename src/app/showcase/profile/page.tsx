@@ -5,6 +5,7 @@ import FloatingCard from "@/components/FloatingCard";
 import TextInput from "@/components/TextInput";
 import DriftButton from "@/components/DriftButton";
 import StatusBadge from "@/components/StatusBadge";
+import DreamAvatar from "@/components/DreamAvatar";
 import Reveal from "@/components/Reveal";
 
 export default function ProfileShowcase() {
@@ -28,19 +29,8 @@ export default function ProfileShowcase() {
           
           {/* Avatar Area */}
           <div className="flex flex-col items-center gap-4 text-center mt-2">
-            <div className="relative">
-              {/* Outer soft glowing border */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-secondary to-primary/80 opacity-70 blur-md scale-105" />
-              {/* Inner Avatar */}
-              <div className="relative h-20 w-20 rounded-full bg-surface-dim border-2 border-white flex items-center justify-center overflow-hidden">
-                <div className="h-full w-full bg-gradient-to-br from-secondary/80 to-primary/80 flex items-center justify-center font-display text-4xl text-midnight/40 italic">
-                  D
-                </div>
-              </div>
-              {/* Status dot */}
-              <div className="absolute bottom-0 right-0 h-4 w-4 rounded-full border-2 border-white bg-mint shadow-glow-primary animate-pulse" />
-            </div>
-            
+            <DreamAvatar name="Dreamer_02" size="lg" status="stable" />
+
             <div className="flex flex-col gap-1">
               <h2 className="font-display text-2xl">Dreamer_02</h2>
               <span className="font-mono text-[9px] tracking-widest text-midnight/40 uppercase">

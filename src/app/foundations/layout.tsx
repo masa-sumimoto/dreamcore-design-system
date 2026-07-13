@@ -23,7 +23,7 @@ export default function FoundationsLayout({
         >
           foundations
         </Link>
-        <span className="text-midnight/30">//</span>
+        <span className="text-midnight/30">{"//"}</span>
         {nav.map((item) => (
           <Link
             key={item.href}

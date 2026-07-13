@@ -4,6 +4,7 @@ import Link from "next/link";
 import FloatingCard from "@/components/FloatingCard";
 import StatusBadge from "@/components/StatusBadge";
 import DriftButton from "@/components/DriftButton";
+import DriftSlider from "@/components/DriftSlider";
 import Reveal from "@/components/Reveal";
 
 const logs = [
@@ -78,13 +79,13 @@ export default function DashboardShowcase() {
               <p className="text-xs text-midnight/60 leading-relaxed">
                 Modulate fog temperature to stabilize memory structures. Warmer blush tones aid in surfacing 90s digital nostalgia.
               </p>
-              <div className="h-2 w-full rounded-full bg-gradient-to-r from-secondary to-primary/80 relative mt-2">
-                <div className="absolute top-1/2 left-[42%] h-4 w-4 -translate-y-1/2 rounded-full border border-white bg-primary shadow-glow-primary" />
-              </div>
-              <div className="flex justify-between font-mono text-[9px] text-midnight/40 tracking-wider">
-                <span>SKY MEMORY</span>
-                <span>SOFT BLOOM</span>
-              </div>
+              <DriftSlider
+                defaultValue={42}
+                minLabel="sky memory"
+                maxLabel="soft bloom"
+                aria-label="Fog temperature"
+                className="mt-2"
+              />
             </FloatingCard>
           </Reveal>
         </div>
