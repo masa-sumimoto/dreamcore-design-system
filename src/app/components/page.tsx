@@ -6,6 +6,8 @@ import TextInput from "@/components/TextInput";
 import StatusBadge from "@/components/StatusBadge";
 import DreamAvatar from "@/components/DreamAvatar";
 import DriftSlider from "@/components/DriftSlider";
+import VoidModalDemo from "@/components/VoidModalDemo";
+import WhisperToastDemo from "@/components/WhisperToastDemo";
 
 export default function ComponentsPage() {
   return (
@@ -141,6 +143,142 @@ export default function ComponentsPage() {
                 </div>
               </div>
             </div>
+          </section>
+        </Reveal>
+
+        {/* Void Modal Section */}
+        <Reveal>
+          <section className="flex flex-col gap-8">
+            <div className="border-b border-surface-dim pb-4">
+              <h2 className="font-display text-3xl">Void Modal</h2>
+              <p className="mt-2 text-sm text-midnight/60">
+                A dialog surfacing from the deep. The void backdrop dims the eternal sunset into gravity and focus, while the panel drifts upward with ease-drift.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Preview */}
+              <FloatingCard className="flex flex-col items-center justify-center gap-4 py-12">
+                <VoidModalDemo />
+                <p className="font-mono text-[9px] tracking-wider text-midnight/40 uppercase">
+                  esc / backdrop click to close
+                </p>
+              </FloatingCard>
+
+              {/* Guidelines */}
+              <div className="flex flex-col justify-center gap-4">
+                <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
+                  <h3 className="font-display text-xl text-rose">Do</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-midnight/70">
+                    Reserve the modal for decisions that deserve full attention — the void backdrop (<code className="font-mono text-[10px] text-rose">#030027</code> at 45%) is the strongest gravity in the system. Always offer a quiet secondary exit next to the action.
+                  </p>
+                </div>
+                <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
+                  <h3 className="font-display text-xl text-midnight/70">Don&apos;t</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-midnight/70">
+                    Never stack modals or use them for passive information. A dream interrupted twice collapses; prefer inline cards or badges for anything that can wait.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Spec Table */}
+            <FloatingCard className="overflow-x-auto p-6">
+              <table className="w-full text-left text-xs">
+                <thead>
+                  <tr className="border-b border-surface-dim pb-2 font-mono text-[10px] tracking-wider text-rose uppercase">
+                    <th className="pb-3">Layer</th>
+                    <th className="pb-3">Token / Technique</th>
+                    <th className="pb-3">Behavior</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-dim font-mono">
+                  <tr>
+                    <td className="py-3 font-sans font-medium text-midnight">panel</td>
+                    <td className="py-3 text-rose">bg-surface/90 rounded-dreamy shadow-float-far</td>
+                    <td className="py-3 text-midnight/60">Rises 28px with ease-drift via @starting-style</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 font-sans font-medium text-midnight">backdrop</td>
+                    <td className="py-3 text-rose">color-void/45 + blur(8px)</td>
+                    <td className="py-3 text-midnight/60">Crossfades with ease-fade, blurring the sunset</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 font-sans font-medium text-midnight">semantics</td>
+                    <td className="py-3 text-rose">native &lt;dialog&gt;</td>
+                    <td className="py-3 text-midnight/60">Focus trap, Esc and inert background for free</td>
+                  </tr>
+                </tbody>
+              </table>
+            </FloatingCard>
+          </section>
+        </Reveal>
+
+        {/* Whisper Toast Section */}
+        <Reveal>
+          <section className="flex flex-col gap-8">
+            <div className="border-b border-surface-dim pb-4">
+              <h2 className="font-display text-3xl">Whisper Toast</h2>
+              <p className="mt-2 text-sm text-midnight/60">
+                Passive feedback that never demands attention. A whisper rises from below with ease-drift, lingers for a breath, then melts back into the fog.
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              {/* Preview */}
+              <FloatingCard className="flex flex-col items-center justify-center gap-4 py-12">
+                <WhisperToastDemo />
+                <p className="font-mono text-[9px] tracking-wider text-midnight/40 uppercase">
+                  melts away after 4.8s
+                </p>
+              </FloatingCard>
+
+              {/* Guidelines */}
+              <div className="flex flex-col justify-center gap-4">
+                <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
+                  <h3 className="font-display text-xl text-rose">Do</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-midnight/70">
+                    Whisper only what can be safely missed — saves, sync states, gentle warnings. Keep the copy to one soft sentence, and let every whisper dissolve on its own.
+                  </p>
+                </div>
+                <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
+                  <h3 className="font-display text-xl text-midnight/70">Don&apos;t</h3>
+                  <p className="mt-2 text-xs leading-relaxed text-midnight/70">
+                    Never whisper something that requires a decision — that is the Void Modal&apos;s gravity. Avoid letting more than three whispers stack; a chorus of whispers becomes noise.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Spec Table */}
+            <FloatingCard className="overflow-x-auto p-6">
+              <table className="w-full text-left text-xs">
+                <thead>
+                  <tr className="border-b border-surface-dim pb-2 font-mono text-[10px] tracking-wider text-rose uppercase">
+                    <th className="pb-3">Variant</th>
+                    <th className="pb-3">Dot Token</th>
+                    <th className="pb-3">Meaning</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-dim font-mono">
+                  <tr>
+                    <td className="py-3 font-sans font-medium text-midnight">drifting</td>
+                    <td className="py-3 text-rose">bg-primary + glow</td>
+                    <td className="py-3 text-midnight/60">Default — a neutral passing thought</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 font-sans font-medium text-midnight">stable</td>
+                    <td className="py-3 text-rose">bg-mint + glow</td>
+                    <td className="py-3 text-midnight/60">Success — the connection held</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 font-sans font-medium text-midnight">fading</td>
+                    <td className="py-3 text-rose">bg-gold + glow</td>
+                    <td className="py-3 text-midnight/60">Gentle warning — act before it fades</td>
+                  </tr>
+                </tbody>
+              </table>
+            </FloatingCard>
           </section>
         </Reveal>
 

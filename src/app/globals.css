@@ -181,6 +181,75 @@ body {
   transform: none;
 }
 
+/* ------------------------------------ */
+/* Void Modal — surfacing from the deep  */
+/* ------------------------------------ */
+.void-modal {
+  opacity: 0;
+  transform: translateY(28px) scale(0.97);
+  transition:
+    opacity 0.5s var(--ease-fade),
+    transform 0.7s var(--ease-drift),
+    overlay 0.7s ease allow-discrete,
+    display 0.7s ease allow-discrete;
+}
+
+.void-modal[open] {
+  opacity: 1;
+  transform: none;
+}
+
+.void-modal::backdrop {
+  background: rgb(3 0 39 / 0.45); /* the void, half-awake */
+  backdrop-filter: blur(8px);
+  opacity: 0;
+  transition:
+    opacity 0.5s var(--ease-fade),
+    overlay 0.5s ease allow-discrete,
+    display 0.5s ease allow-discrete;
+}
+
+.void-modal[open]::backdrop {
+  opacity: 1;
+}
+
+@starting-style {
+  .void-modal[open] {
+    opacity: 0;
+    transform: translateY(28px) scale(0.97);
+  }
+
+  .void-modal[open]::backdrop {
+    opacity: 0;
+  }
+}
+
+/* ------------------------------------ */
+/* Whisper Toast — melts into the fog    */
+/* ------------------------------------ */
+.whisper-toast {
+  opacity: 1;
+  transform: none;
+  filter: blur(0);
+  transition:
+    opacity 0.7s var(--ease-fade),
+    transform 0.7s var(--ease-drift),
+    filter 0.7s var(--ease-fade);
+}
+
+@starting-style {
+  .whisper-toast {
+    opacity: 0;
+    transform: translateY(16px) scale(0.98);
+  }
+}
+
+.whisper-toast[data-leaving] {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.98);
+  filter: blur(6px);
+}
+
 /* Scroll hint — a slow breath */
 @keyframes breathe {
   0%,
@@ -213,6 +282,12 @@ body {
   .hero-rise {
     animation: none;
     opacity: 1;
+  }
+
+  .void-modal,
+  .void-modal::backdrop,
+  .whisper-toast {
+    transition: none;
   }
 
   .reveal {
