@@ -80,6 +80,15 @@ export default function Home() {
               View Showcase
             </Link>
           </div>
+          <a
+            href="https://www.figma.com/community/file/1658134948361547091"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hero-rise mt-7 font-mono text-[10px] tracking-[0.25em] text-midnight/50 uppercase underline-offset-4 transition-colors duration-500 ease-fade hover:text-rose hover:underline"
+            style={{ animationDelay: "1050ms" }}
+          >
+            get the figma community template ↗
+          </a>
 
           <div className="scroll-hint absolute bottom-10 font-mono text-[10px] tracking-[0.3em] text-text-muted uppercase">
             drift down
