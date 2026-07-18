@@ -47,7 +47,7 @@ export default function FoundationsPage() {
           <Reveal key={page.href} delay={i * 100}>
             <Link
               href={page.href}
-              className="flex h-full flex-col gap-3 rounded-dreamy bg-surface/80 p-8 shadow-float backdrop-blur-sm transition-all duration-500 ease-drift hover:-translate-y-1.5 hover:shadow-glow-primary"
+              className="flex h-full flex-col gap-3 rounded-dreamy bg-surface/80 p-8 shadow-float backdrop-blur-sm transition-all duration-drift ease-drift hover:-translate-y-1.5 hover:shadow-glow-primary"
             >
               <h2 className="font-display text-2xl">{page.title}</h2>
               <p className="text-sm leading-relaxed text-midnight/60">

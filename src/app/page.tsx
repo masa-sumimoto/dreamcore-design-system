@@ -69,13 +69,13 @@ export default function Home() {
           >
             <Link
               href="/foundations"
-              className="rounded-full bg-action px-8 py-4 text-sm font-medium transition-all duration-500 ease-drift hover:-translate-y-1 hover:shadow-glow-action"
+              className="rounded-full bg-action px-8 py-4 text-sm font-medium transition-all duration-drift ease-drift hover:-translate-y-1 hover:shadow-glow-action"
             >
               Explore Foundations
             </Link>
             <Link
               href="/showcase"
-              className="rounded-full border border-primary/60 px-8 py-4 text-sm font-medium text-midnight transition-all duration-500 ease-drift hover:-translate-y-1 hover:border-primary hover:shadow-glow-primary"
+              className="rounded-full border border-primary/60 px-8 py-4 text-sm font-medium text-midnight transition-all duration-drift ease-drift hover:-translate-y-1 hover:border-primary hover:shadow-glow-primary"
             >
               View Showcase
             </Link>
@@ -84,7 +84,7 @@ export default function Home() {
             href="https://www.figma.com/community/file/1658134948361547091"
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-rise mt-7 font-mono text-[10px] tracking-[0.25em] text-midnight/50 uppercase underline-offset-4 transition-colors duration-500 ease-fade hover:text-rose hover:underline"
+            className="hero-rise mt-7 font-mono text-[10px] tracking-[0.25em] text-midnight/50 uppercase underline-offset-4 transition-colors duration-drift ease-fade hover:text-rose hover:underline"
             style={{ animationDelay: "1050ms" }}
           >
             get the figma community template ↗
@@ -126,7 +126,7 @@ export default function Home() {
               <Reveal key={section.href} delay={i * 150}>
                 <Link
                   href={section.href}
-                  className="flex h-full flex-col gap-3 rounded-dreamy bg-surface/80 p-8 shadow-float backdrop-blur-sm transition-all duration-500 ease-drift hover:-translate-y-1.5 hover:shadow-glow-primary"
+                  className="flex h-full flex-col gap-3 rounded-dreamy bg-surface/80 p-8 shadow-float backdrop-blur-sm transition-all duration-drift ease-drift hover:-translate-y-1.5 hover:shadow-glow-primary"
                 >
                   <h2 className="font-display text-2xl">{section.title}</h2>
                   <p className="text-sm text-text-muted">

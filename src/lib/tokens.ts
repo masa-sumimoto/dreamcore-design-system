@@ -212,11 +212,11 @@ export const effectTokens = [
   },
 ];
 
-export const motionTokens = [
+export const easingTokens = [
   {
     name: "ease-drift",
     value: "cubic-bezier(0.16, 1, 0.3, 1)",
-    role: "The signature easing. A long, floating deceleration — like something settling in water.",
+    role: "The signature easing. A long, floating deceleration — like something settling in water. Entrances and hover drifts.",
     feel: "もっちり — heavy start, endless tail",
   },
   {
@@ -225,4 +225,49 @@ export const motionTokens = [
     role: "For opacity crossfades and gentle state changes.",
     feel: "ぬるっ — smooth, symmetrical",
   },
+  {
+    name: "ease-sink",
+    value: "cubic-bezier(0.7, 0, 0.84, 0)",
+    role: "The mirror of drift. Exits accelerate quietly away — sinking back into the void.",
+    feel: "すっ… — gentle release, then gone",
+  },
 ];
+
+export const durationTokens = [
+  {
+    name: "whisper",
+    value: "300ms",
+    role: "Color and opacity micro-shifts: link hovers, underlines, focus glows.",
+  },
+  {
+    name: "drift",
+    value: "500ms",
+    role: "Interactive drift: hover lifts, presses, small state changes.",
+  },
+  {
+    name: "surface",
+    value: "700ms",
+    role: "Overlays surfacing and melting: modals, toasts.",
+  },
+  {
+    name: "rise",
+    value: "1200ms",
+    role: "Scroll reveals — content surfacing like a memory.",
+  },
+  {
+    name: "dawn",
+    value: "1600ms",
+    role: "First paint. The hero waking up.",
+  },
+  {
+    name: "breathe",
+    value: "3600ms",
+    role: "Ambient micro-loops: scroll hints, idle pulses. Fog cycles (30–50s) stay bespoke.",
+  },
+];
+
+export const staggerToken = {
+  name: "stagger-surface",
+  value: "120ms",
+  role: "Sibling delay when groups surface together — the page assembles itself gradually.",
+};

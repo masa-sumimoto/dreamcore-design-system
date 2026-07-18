@@ -3,33 +3,14 @@
 import { useEffect, useState } from "react";
 
 const tracks = [
-  {
-    label: "ease-drift",
-    className: "ease-drift bg-primary",
-    duration: 1400,
-    note: "settles like something sinking in water",
-  },
-  {
-    label: "ease-fade",
-    className: "ease-fade bg-secondary",
-    duration: 1400,
-    note: "smooth, symmetrical crossfade",
-  },
-  {
-    label: "ease-sink",
-    className: "ease-sink bg-lilac",
-    duration: 1400,
-    note: "the mirror of drift — accelerates quietly away",
-  },
-  {
-    label: "linear (don't)",
-    className: "ease-linear bg-midnight/30",
-    duration: 1400,
-    note: "mechanical — nothing in a dream moves like this",
-  },
+  { label: "whisper", duration: 300, className: "bg-secondary" },
+  { label: "drift", duration: 500, className: "bg-action" },
+  { label: "surface", duration: 700, className: "bg-primary" },
+  { label: "rise", duration: 1200, className: "bg-lilac" },
+  { label: "dawn", duration: 1600, className: "bg-rose" },
 ];
 
-export default function EasingDemo() {
+export default function DurationDemo() {
   const [run, setRun] = useState(false);
 
   const replay = () => {
@@ -52,16 +33,16 @@ export default function EasingDemo() {
           <div key={track.label} className="flex flex-col gap-2">
             <div className="flex items-baseline justify-between gap-4">
               <code className="font-mono text-[11px] text-rose">
-                {track.label}
+                duration-{track.label}
               </code>
               <span className="text-[11px] text-midnight/50">
-                {track.note}
+                {track.duration}ms
               </span>
             </div>
             <div className="@container relative h-6 rounded-full bg-surface-dim">
               <div
-                className={`absolute top-1/2 left-1 h-4 w-4 -translate-y-1/2 rounded-full ${
-                  run ? `transition-transform ${track.className}` : ""
+                className={`absolute top-1/2 left-1 h-4 w-4 -translate-y-1/2 rounded-full ${track.className} ${
+                  run ? "transition-transform ease-drift" : ""
                 }`}
                 style={{
                   transitionDuration: run ? `${track.duration}ms` : "0ms",

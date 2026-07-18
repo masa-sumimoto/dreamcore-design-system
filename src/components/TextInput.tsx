@@ -30,7 +30,7 @@ export default function TextInput({
       <input
         id={id}
         disabled={disabled}
-        className={`w-full rounded-soft bg-surface-dim/40 border border-primary/20 px-4 py-3 text-sm text-midnight placeholder-midnight/40 backdrop-blur-sm transition-all duration-400 ease-fade outline-none hover:border-primary/45 focus:border-primary/80 focus:bg-surface/80 focus:shadow-glow-primary disabled:pointer-events-none disabled:opacity-40`}
+        className={`w-full rounded-soft bg-surface-dim/40 border border-primary/20 px-4 py-3 text-sm text-midnight placeholder-midnight/40 backdrop-blur-sm transition-all duration-whisper ease-fade outline-none hover:border-primary/45 focus:border-primary/80 focus:bg-surface/80 focus:shadow-glow-primary disabled:pointer-events-none disabled:opacity-40`}
         {...props}
       />
       {error && (

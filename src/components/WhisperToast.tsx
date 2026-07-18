@@ -24,7 +24,7 @@ type Whisper = Required<Omit<WhisperInput, "message">> & {
 };
 
 const LINGER_MS = 4800; // how long a whisper stays before melting
-const MELT_MS = 700; // must match the .whisper-toast transition duration
+const MELT_MS = 700; // must match --transition-duration-surface (.whisper-toast)
 
 const WhisperContext = createContext<((input: WhisperInput) => void) | null>(
   null,
@@ -99,7 +99,7 @@ export function WhisperProvider({ children }: { children: ReactNode }) {
               type="button"
               onClick={() => dismiss(w.id)}
               aria-label="Dismiss"
-              className="-mt-1 -mr-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs text-midnight/40 transition-all duration-500 ease-drift hover:bg-surface-dim hover:text-midnight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+              className="-mt-1 -mr-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs text-midnight/40 transition-all duration-drift ease-drift hover:bg-surface-dim hover:text-midnight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               ✕
             </button>

@@ -22,7 +22,7 @@ export default function FloatingCard<T extends ElementType = "div">({
     "rounded-dreamy bg-surface/75 p-8 shadow-float backdrop-blur-md border border-white/20";
   
   const hoverStyles = hoverable
-    ? "transition-all duration-500 ease-drift hover:-translate-y-1.5 hover:shadow-float-far hover:bg-surface/85"
+    ? "transition-all duration-drift ease-drift hover:-translate-y-1.5 hover:shadow-float-far hover:bg-surface/85"
     : "";
 
   return (

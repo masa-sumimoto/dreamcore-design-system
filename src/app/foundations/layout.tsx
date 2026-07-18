@@ -19,7 +19,7 @@ export default function FoundationsLayout({
       <nav className="mb-16 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] tracking-[0.2em] uppercase">
         <Link
           href="/foundations"
-          className="text-rose transition-colors duration-300 hover:text-midnight"
+          className="text-rose transition-colors duration-whisper hover:text-midnight"
         >
           foundations
         </Link>
@@ -28,7 +28,7 @@ export default function FoundationsLayout({
           <Link
             key={item.href}
             href={item.href}
-            className="text-midnight/50 transition-colors duration-300 hover:text-rose"
+            className="text-midnight/50 transition-colors duration-whisper hover:text-rose"
           >
             {item.label}
           </Link>

@@ -70,8 +70,19 @@
   /* ---------------------------------- */
   /* Motion: slow, fluid, drifting      */
   /* ---------------------------------- */
-  --ease-drift: cubic-bezier(0.16, 1, 0.3, 1); /* long, floating deceleration */
+  --ease-drift: cubic-bezier(0.16, 1, 0.3, 1); /* long, floating deceleration — entrances, hovers */
   --ease-fade: cubic-bezier(0.4, 0, 0.2, 1); /* gentle crossfade */
+  --ease-sink: cubic-bezier(0.7, 0, 0.84, 0); /* mirror of drift — exits accelerate away into the void */
+
+  /* Durations: a bespoke scale, named by feel. Ambient fog cycles (30–50s) stay bespoke per layer. */
+  --transition-duration-whisper: 300ms; /* color & opacity micro-shifts */
+  --transition-duration-drift: 500ms; /* interactive drift: hover lifts, presses */
+  --transition-duration-surface: 700ms; /* overlays surfacing and melting */
+  --transition-duration-rise: 1200ms; /* scroll reveals — content surfacing */
+  --transition-duration-dawn: 1600ms; /* first paint — the hero waking up */
+  --transition-duration-breathe: 3600ms; /* ambient micro-loops */
+
+  --stagger-surface: 120ms; /* sibling delay when groups surface together */
 }
 
 body {
@@ -165,15 +176,15 @@ body {
 
 .hero-rise {
   opacity: 0;
-  animation: rise 1.6s var(--ease-drift) forwards;
+  animation: rise var(--transition-duration-dawn) var(--ease-drift) forwards;
 }
 
 .reveal {
   opacity: 0;
   transform: translateY(28px);
   transition:
-    opacity 1.2s var(--ease-fade),
-    transform 1.2s var(--ease-drift);
+    opacity var(--transition-duration-rise) var(--ease-fade),
+    transform var(--transition-duration-rise) var(--ease-drift);
 }
 
 .reveal.is-visible {
@@ -183,20 +194,27 @@ body {
 
 /* ------------------------------------ */
 /* Void Modal — surfacing from the deep  */
+/* Enter drifts up (decelerate); exit    */
+/* sinks back (accelerate). Asymmetric.  */
 /* ------------------------------------ */
 .void-modal {
   opacity: 0;
   transform: translateY(28px) scale(0.97);
   transition:
-    opacity 0.5s var(--ease-fade),
-    transform 0.7s var(--ease-drift),
-    overlay 0.7s ease allow-discrete,
-    display 0.7s ease allow-discrete;
+    opacity var(--transition-duration-drift) var(--ease-fade),
+    transform var(--transition-duration-drift) var(--ease-sink),
+    overlay var(--transition-duration-drift) ease allow-discrete,
+    display var(--transition-duration-drift) ease allow-discrete;
 }
 
 .void-modal[open] {
   opacity: 1;
   transform: none;
+  transition:
+    opacity var(--transition-duration-drift) var(--ease-fade),
+    transform var(--transition-duration-surface) var(--ease-drift),
+    overlay var(--transition-duration-surface) ease allow-discrete,
+    display var(--transition-duration-surface) ease allow-discrete;
 }
 
 .void-modal::backdrop {
@@ -204,9 +222,9 @@ body {
   backdrop-filter: blur(8px);
   opacity: 0;
   transition:
-    opacity 0.5s var(--ease-fade),
-    overlay 0.5s ease allow-discrete,
-    display 0.5s ease allow-discrete;
+    opacity var(--transition-duration-drift) var(--ease-fade),
+    overlay var(--transition-duration-drift) ease allow-discrete,
+    display var(--transition-duration-drift) ease allow-discrete;
 }
 
 .void-modal[open]::backdrop {
@@ -232,9 +250,9 @@ body {
   transform: none;
   filter: blur(0);
   transition:
-    opacity 0.7s var(--ease-fade),
-    transform 0.7s var(--ease-drift),
-    filter 0.7s var(--ease-fade);
+    opacity var(--transition-duration-surface) var(--ease-fade),
+    transform var(--transition-duration-surface) var(--ease-drift),
+    filter var(--transition-duration-surface) var(--ease-fade);
 }
 
 @starting-style {
@@ -248,6 +266,10 @@ body {
   opacity: 0;
   transform: translateY(-10px) scale(0.98);
   filter: blur(6px);
+  transition:
+    opacity var(--transition-duration-surface) var(--ease-fade),
+    transform var(--transition-duration-surface) var(--ease-sink),
+    filter var(--transition-duration-surface) var(--ease-fade);
 }
 
 /* Scroll hint — a slow breath */
@@ -264,7 +286,7 @@ body {
 }
 
 .scroll-hint {
-  animation: breathe 3.6s ease-in-out infinite;
+  animation: breathe var(--transition-duration-breathe) ease-in-out infinite;
 }
 
 /* ------------------------------------ */

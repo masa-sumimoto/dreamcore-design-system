@@ -1,16 +1,21 @@
+import DurationDemo from "@/components/DurationDemo";
 import EasingDemo from "@/components/EasingDemo";
 import PageIntro from "@/components/PageIntro";
 import Reveal from "@/components/Reveal";
-import { motionTokens } from "@/lib/tokens";
+import { durationTokens, easingTokens, staggerToken } from "@/lib/tokens";
 
 const principles = [
   {
     title: "Drift, don't snap",
-    body: "Interactive feedback is a slow upward drift (400–700ms), never a mechanical click. Hover states feel like objects loosening from gravity.",
+    body: "Interactive feedback is a slow upward drift (duration-drift, 500ms), never a mechanical click. Hover states feel like objects loosening from gravity.",
+  },
+  {
+    title: "Enter slow, leave quiet",
+    body: "Motion is asymmetric. Entrances decelerate with ease-drift; exits accelerate away with ease-sink, its mirror. Things surface gently and sink back into the void.",
   },
   {
     title: "Surface like a memory",
-    body: "Content enters with a long fade + rise (1.2–1.6s). Stagger siblings by 100–150ms so the page assembles itself gradually.",
+    body: "Content enters with a long fade + rise (duration-rise to duration-dawn). Stagger siblings by --stagger-surface (120ms) so the page assembles itself gradually.",
   },
   {
     title: "The fog never stops",
@@ -38,7 +43,7 @@ export default function MotionPage() {
               <EasingDemo />
             </div>
             <div className="mt-8 flex flex-col gap-4 rounded-dreamy bg-surface/80 p-8 shadow-float backdrop-blur-sm">
-              {motionTokens.map((token) => (
+              {easingTokens.map((token) => (
                 <div
                   key={token.name}
                   className="grid gap-1 border-b border-surface-dim pb-4 last:border-0 last:pb-0 md:grid-cols-[10rem_1fr] md:gap-6"
@@ -57,6 +62,51 @@ export default function MotionPage() {
                   </div>
                 </div>
               ))}
+            </div>
+          </section>
+        </Reveal>
+
+        <Reveal>
+          <section>
+            <h2 className="font-display text-3xl">Duration</h2>
+            <p className="mt-4 max-w-2xl text-sm leading-relaxed text-midnight/60">
+              A bespoke scale, named by feel — not a numeric ramp. Each name is
+              a role: whispers shift color, drifts carry interaction, surfaces
+              carry overlays, and dawn wakes the hero.
+            </p>
+            <div className="mt-8">
+              <DurationDemo />
+            </div>
+            <div className="mt-8 flex flex-col gap-4 rounded-dreamy bg-surface/80 p-8 shadow-float backdrop-blur-sm">
+              {durationTokens.map((token) => (
+                <div
+                  key={token.name}
+                  className="grid gap-1 border-b border-surface-dim pb-4 md:grid-cols-[10rem_1fr] md:gap-6"
+                >
+                  <code className="font-mono text-[11px] text-rose">
+                    duration-{token.name}
+                  </code>
+                  <div>
+                    <code className="font-mono text-[11px] text-midnight/60">
+                      {token.value}
+                    </code>
+                    <p className="mt-1 text-xs text-midnight/55">{token.role}</p>
+                  </div>
+                </div>
+              ))}
+              <div className="grid gap-1 md:grid-cols-[10rem_1fr] md:gap-6">
+                <code className="font-mono text-[11px] text-rose">
+                  {staggerToken.name}
+                </code>
+                <div>
+                  <code className="font-mono text-[11px] text-midnight/60">
+                    {staggerToken.value}
+                  </code>
+                  <p className="mt-1 text-xs text-midnight/55">
+                    {staggerToken.role}
+                  </p>
+                </div>
+              </div>
             </div>
           </section>
         </Reveal>

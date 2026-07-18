@@ -62,7 +62,7 @@ export default function VoidModal({
           type="button"
           onClick={onClose}
           aria-label="Close"
-          className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-full text-lg text-midnight/40 transition-all duration-500 ease-drift hover:rotate-90 hover:bg-surface-dim hover:text-midnight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          className="absolute right-5 top-5 flex h-8 w-8 items-center justify-center rounded-full text-lg text-midnight/40 transition-all duration-drift ease-drift hover:rotate-90 hover:bg-surface-dim hover:text-midnight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
         >
           ✕
         </button>

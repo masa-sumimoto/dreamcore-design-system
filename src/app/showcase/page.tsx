@@ -86,7 +86,7 @@ export default function ShowcasePage() {
                 {showcase.visual}
                 
                 <div className="flex flex-col gap-2">
-                  <h2 className="font-display text-2xl group-hover:text-rose transition-colors duration-300">
+                  <h2 className="font-display text-2xl group-hover:text-rose transition-colors duration-whisper">
                     {showcase.title}
                   </h2>
                   <p className="text-xs leading-relaxed text-midnight/60">
