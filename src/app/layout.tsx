@@ -22,7 +22,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://dreamcore-design-system.vercel.app"),
+  metadataBase: new URL("https://dreamcore.xpadding.com"),
   title: "Dreamcore Design System",
   description:
     "A surreal, emotional, and nostalgic design system. Liminal spaces, late-90s digital memories, and a permanent sunset in a dream.",
