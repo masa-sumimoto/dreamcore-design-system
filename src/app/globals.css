@@ -290,6 +290,17 @@ body {
 }
 
 /* ------------------------------------ */
+/* Page transitions — one page melts    */
+/* into the next, like a dream cutting  */
+/* to the next scene                    */
+/* ------------------------------------ */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: var(--transition-duration-surface);
+  animation-timing-function: var(--ease-fade);
+}
+
+/* ------------------------------------ */
 /* Reduced motion: the dream stands still */
 /* ------------------------------------ */
 @media (prefers-reduced-motion: reduce) {
@@ -299,6 +310,12 @@ body {
   .animate-fog-d,
   .scroll-hint {
     animation: none;
+  }
+
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
   }
 
   .hero-rise {

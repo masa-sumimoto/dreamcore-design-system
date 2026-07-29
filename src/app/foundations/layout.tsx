@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
+import TransitionLink from "@/components/TransitionLink";
 
 const nav = [
   { href: "/foundations/colors", label: "colors" },
@@ -17,21 +17,21 @@ export default function FoundationsLayout({
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-8 pt-28 pb-32">
       <nav className="mb-16 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-[11px] tracking-[0.2em] uppercase">
-        <Link
+        <TransitionLink
           href="/foundations"
           className="text-rose transition-colors duration-whisper hover:text-midnight"
         >
           foundations
-        </Link>
+        </TransitionLink>
         <span className="text-midnight/30">{"//"}</span>
         {nav.map((item) => (
-          <Link
+          <TransitionLink
             key={item.href}
             href={item.href}
             className="text-midnight/50 transition-colors duration-whisper hover:text-rose"
           >
             {item.label}
-          </Link>
+          </TransitionLink>
         ))}
       </nav>
       {children}

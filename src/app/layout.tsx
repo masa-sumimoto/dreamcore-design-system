@@ -3,6 +3,7 @@ import { Instrument_Serif, Inter, Geist_Mono } from "next/font/google";
 import { GoogleTagManager } from "@next/third-parties/google";
 import FogBackground from "@/components/FogBackground";
 import SiteHeader from "@/components/SiteHeader";
+import { ViewTransitionsProvider } from "@/components/ViewTransitionsProvider";
 import "./globals.css";
 
 const instrumentSerif = Instrument_Serif({
@@ -49,9 +50,11 @@ export default function RootLayout({
             style={{ display: "none", visibility: "hidden" }}
           />
         </noscript>
-        <FogBackground />
-        <SiteHeader />
-        {children}
+        <ViewTransitionsProvider>
+          <FogBackground />
+          <SiteHeader />
+          {children}
+        </ViewTransitionsProvider>
       </body>
     </html>
   );

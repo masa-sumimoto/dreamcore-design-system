@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
+import TransitionLink from "@/components/TransitionLink";
 
 const links = [
   { href: "/foundations", label: "foundations" },
@@ -17,24 +17,24 @@ export default function SiteHeader() {
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 md:px-8 bg-background/40 backdrop-blur-md border-b border-surface-dim/15">
-        <Link
+        <TransitionLink
           href="/"
           className="font-display text-xl transition-colors duration-whisper hover:text-rose"
           onClick={() => setIsOpen(false)}
         >
           Dreamcore
-        </Link>
+        </TransitionLink>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-7 font-mono text-[11px] tracking-[0.2em] uppercase">
           {links.map((link) => (
-            <Link
+            <TransitionLink
               key={link.href}
               href={link.href}
               className="text-midnight/60 transition-colors duration-whisper hover:text-rose"
             >
               {link.label}
-            </Link>
+            </TransitionLink>
           ))}
         </nav>
 
@@ -56,7 +56,7 @@ export default function SiteHeader() {
       >
         <nav className="flex flex-col items-center gap-10 text-center">
           {links.map((link, i) => (
-            <Link
+            <TransitionLink
               key={link.href}
               href={link.href}
               onClick={toggleMenu}
@@ -66,7 +66,7 @@ export default function SiteHeader() {
               style={{ transitionDelay: `${isOpen ? i * 75 : 0}ms` }}
             >
               {link.label}
-            </Link>
+            </TransitionLink>
           ))}
         </nav>
       </div>

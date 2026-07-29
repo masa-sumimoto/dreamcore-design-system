@@ -111,24 +111,22 @@ export default function MotionPage() {
           </section>
         </Reveal>
 
-        <Reveal>
-          <section>
-            <h2 className="font-display text-3xl">Principles</h2>
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              {principles.map((principle) => (
-                <div
-                  key={principle.title}
-                  className="rounded-dreamy bg-surface/80 p-8 shadow-float backdrop-blur-sm"
-                >
-                  <h3 className="font-display text-xl">{principle.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-midnight/60">
-                    {principle.body}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </section>
-        </Reveal>
+        <section>
+          <h2 className="font-display text-3xl">Principles</h2>
+          <Reveal stagger className="mt-8 grid gap-6 md:grid-cols-2">
+            {principles.map((principle) => (
+              <div
+                key={principle.title}
+                className="rounded-dreamy bg-surface/80 p-8 shadow-float backdrop-blur-sm"
+              >
+                <h3 className="font-display text-xl">{principle.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-midnight/60">
+                  {principle.body}
+                </p>
+              </div>
+            ))}
+          </Reveal>
+        </section>
       </div>
     </>
   );
