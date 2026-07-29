@@ -8,6 +8,7 @@ import DreamAvatar from "@/components/DreamAvatar";
 import DriftSlider from "@/components/DriftSlider";
 import VoidModalDemo from "@/components/VoidModalDemo";
 import WhisperToastDemo from "@/components/WhisperToastDemo";
+import VaporTabsDemo from "@/components/VaporTabsDemo";
 
 export default function ComponentsPage() {
   return (
@@ -453,6 +454,66 @@ export default function ComponentsPage() {
                 </div>
               </div>
             </div>
+          </section>
+        </Reveal>
+
+        {/* Vapor Tabs / Segmented Control Section */}
+        <Reveal>
+          <section className="flex flex-col gap-8">
+            <div className="border-b border-surface-dim pb-4">
+              <h2 className="font-display text-3xl">Vapor Tabs / Segmented Control</h2>
+              <p className="mt-2 text-sm text-midnight/60">
+                Segmented control with floating glassmorphic physics. A sliding vapor pill drifts across tabs using the <code className="font-mono text-xs text-rose">ease-drift</code> bezier curve.
+              </p>
+            </div>
+
+            <VaporTabsDemo />
+
+            {/* Guidelines */}
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
+                <h3 className="font-display text-xl text-rose">Do</h3>
+                <p className="mt-2 text-xs leading-relaxed text-midnight/70">
+                  Use <strong>glass</strong> on the blush canvas and <strong>void</strong> against midnight surfaces, so the pill&apos;s glow always has somewhere to breathe. Keep labels to two or three words — the pill needs room to drift.
+                </p>
+              </div>
+              <div className="rounded-dreamy bg-surface/40 p-6 border border-white/10">
+                <h3 className="font-display text-xl text-midnight/70">Don&apos;t</h3>
+                <p className="mt-2 text-xs leading-relaxed text-midnight/70">
+                  Avoid more than five tabs in one track — the segmented control loses its floating stillness once it has to scroll. Don&apos;t pair <strong>minimal</strong> with a busy background; it has no glow to separate itself from the noise.
+                </p>
+              </div>
+            </div>
+
+            {/* Spec Table */}
+            <FloatingCard className="overflow-x-auto p-6">
+              <table className="w-full text-left text-xs">
+                <thead>
+                  <tr className="border-b border-surface-dim pb-2 font-mono text-[10px] tracking-wider text-rose uppercase">
+                    <th className="pb-3">Prop</th>
+                    <th className="pb-3">Type</th>
+                    <th className="pb-3">Description</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-surface-dim font-mono">
+                  <tr>
+                    <td className="py-3 font-sans font-medium text-midnight">items</td>
+                    <td className="py-3 text-rose">TabItem[]</td>
+                    <td className="py-3 text-midnight/60">Array of tabs with id, label, icon, badge, and disabled states</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 font-sans font-medium text-midnight">variant</td>
+                    <td className="py-3 text-rose">&quot;glass&quot; | &quot;void&quot; | &quot;minimal&quot;</td>
+                    <td className="py-3 text-midnight/60">Visual texture and glow intensity for track & sliding indicator</td>
+                  </tr>
+                  <tr>
+                    <td className="py-3 font-sans font-medium text-midnight">size</td>
+                    <td className="py-3 text-rose">&quot;sm&quot; | &quot;md&quot; | &quot;lg&quot;</td>
+                    <td className="py-3 text-midnight/60">Scale of padding, typography, and indicator offset</td>
+                  </tr>
+                </tbody>
+              </table>
+            </FloatingCard>
           </section>
         </Reveal>
       </div>
