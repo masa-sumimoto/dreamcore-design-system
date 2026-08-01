@@ -84,9 +84,10 @@ export default function Home() {
             href="https://www.figma.com/community/file/1658134948361547091"
             target="_blank"
             rel="noopener noreferrer"
-            className="hero-rise mt-7 font-mono text-[10px] tracking-[0.25em] text-midnight/50 uppercase underline-offset-4 transition-colors duration-drift ease-fade hover:text-rose hover:underline"
+            className="hero-rise mt-7 inline-flex items-center gap-2 rounded-full border border-rose/30 bg-rose/5 px-5 py-2 font-mono text-[11px] tracking-[0.2em] text-rose uppercase transition-all duration-drift ease-drift hover:-translate-y-0.5 hover:border-rose hover:bg-rose/10 hover:shadow-glow-primary"
             style={{ animationDelay: "1050ms" }}
           >
+            <span className="h-1.5 w-1.5 rounded-full bg-rose" />
             get the figma community template ↗
           </a>
 
