@@ -1,5 +1,6 @@
 import PageIntro from "@/components/PageIntro";
 import Reveal from "@/components/Reveal";
+import CodeBlock from "@/components/CodeBlock";
 import DriftButton from "@/components/DriftButton";
 import FloatingCard from "@/components/FloatingCard";
 import TextInput from "@/components/TextInput";
@@ -91,6 +92,16 @@ export default function ComponentsPage() {
                 </tbody>
               </table>
             </FloatingCard>
+
+            <CodeBlock
+              code={`import DriftButton from "@/components/DriftButton";
+
+<DriftButton variant="action">Enter the dream</DriftButton>
+<DriftButton variant="primary">Continue</DriftButton>
+<DriftButton variant="secondary" href="/foundations">
+  Learn more
+</DriftButton>`}
+            />
           </section>
         </Reveal>
 
@@ -144,6 +155,19 @@ export default function ComponentsPage() {
                 </div>
               </div>
             </div>
+
+            <CodeBlock
+              code={`import FloatingCard from "@/components/FloatingCard";
+
+<FloatingCard>
+  <h3>A room with no windows</h3>
+  <p>Static content, soft elevation.</p>
+</FloatingCard>
+
+<FloatingCard hoverable className="cursor-pointer">
+  <h3>Gravity looses here</h3>
+</FloatingCard>`}
+            />
           </section>
         </Reveal>
 
@@ -212,6 +236,28 @@ export default function ComponentsPage() {
                 </tbody>
               </table>
             </FloatingCard>
+
+            <CodeBlock
+              code={`import { useState } from "react";
+import VoidModal from "@/components/VoidModal";
+import DriftButton from "@/components/DriftButton";
+
+const [open, setOpen] = useState(false);
+
+<VoidModal
+  open={open}
+  onClose={() => setOpen(false)}
+  eyebrow="waking protocol"
+  title="Leave this dream?"
+  footer={
+    <DriftButton variant="action" onClick={() => setOpen(false)}>
+      Drift away
+    </DriftButton>
+  }
+>
+  <p>The sunset outside this window has been paused for you.</p>
+</VoidModal>`}
+            />
           </section>
         </Reveal>
 
@@ -280,6 +326,28 @@ export default function ComponentsPage() {
                 </tbody>
               </table>
             </FloatingCard>
+
+            <CodeBlock
+              code={`import { WhisperProvider, useWhisper } from "@/components/WhisperToast";
+
+function Trigger() {
+  const whisper = useWhisper();
+  return (
+    <button
+      onClick={() =>
+        whisper({ title: "memory saved", message: "the fog will remember this." })
+      }
+    >
+      Whisper a Memory
+    </button>
+  );
+}
+
+// mount once near the root
+<WhisperProvider>
+  <Trigger />
+</WhisperProvider>`}
+            />
           </section>
         </Reveal>
 
@@ -331,6 +399,20 @@ export default function ComponentsPage() {
                 </div>
               </div>
             </div>
+
+            <CodeBlock
+              code={`import TextInput from "@/components/TextInput";
+
+<TextInput
+  label="email address"
+  placeholder="enter the address of your childhood home"
+/>
+<TextInput
+  label="security code"
+  error="this code does not match the memory"
+  defaultValue="1234"
+/>`}
+            />
           </section>
         </Reveal>
 
@@ -369,6 +451,14 @@ export default function ComponentsPage() {
                 </div>
               </div>
             </div>
+
+            <CodeBlock
+              code={`import DreamAvatar from "@/components/DreamAvatar";
+
+<DreamAvatar name="Dreamer_02" size="sm" status="stable" />
+<DreamAvatar name="Anemoia" size="md" status="drifting" />
+<DreamAvatar name="Sunset" size="lg" />`}
+            />
           </section>
         </Reveal>
 
@@ -416,6 +506,17 @@ export default function ComponentsPage() {
                 </div>
               </div>
             </div>
+
+            <CodeBlock
+              code={`import DriftSlider from "@/components/DriftSlider";
+
+<DriftSlider
+  label="fog temperature"
+  defaultValue={42}
+  minLabel="sky memory"
+  maxLabel="soft bloom"
+/>`}
+            />
           </section>
         </Reveal>
 
@@ -454,6 +555,16 @@ export default function ComponentsPage() {
                 </div>
               </div>
             </div>
+
+            <CodeBlock
+              code={`import StatusBadge from "@/components/StatusBadge";
+
+<StatusBadge variant="stable">stable connection</StatusBadge>
+<StatusBadge variant="warning" pulse={false}>
+  fading memory
+</StatusBadge>
+<StatusBadge variant="void">the void</StatusBadge>`}
+            />
           </section>
         </Reveal>
 
@@ -514,6 +625,18 @@ export default function ComponentsPage() {
                 </tbody>
               </table>
             </FloatingCard>
+
+            <CodeBlock
+              code={`import VaporTabs from "@/components/VaporTabs";
+
+<VaporTabs
+  items={tabs}
+  activeId={active}
+  onChange={setActive}
+  variant="glass"
+  size="md"
+/>`}
+            />
           </section>
         </Reveal>
       </div>
