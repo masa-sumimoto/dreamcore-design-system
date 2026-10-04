@@ -1,3 +1,5 @@
+![Dreamcore Design System](docs/images/cover.png)
+
 # Dreamcore Design System
 
 A surreal, emotional, and nostalgic design system — liminal spaces, late-90s digital memories, and a permanent sunset in a dream.
