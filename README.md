@@ -4,7 +4,7 @@
 
 A surreal, emotional, and nostalgic design system — liminal spaces, late-90s digital memories, and a permanent sunset in a dream.
 
-This project builds the Dreamcore aesthetic as a real, working website (Next.js + Tailwind v4), with the code as the single source of truth. The end goal is to publish it as a **Figma template**.
+This project builds the Dreamcore aesthetic as a real, working website (Next.js + Tailwind v4), with the code as the single source of truth. It is also published as a **Figma template**: [Dreamcore Design System on Figma Community](https://www.figma.com/community/file/1658134948361547091).
 
 ## Structure
 
