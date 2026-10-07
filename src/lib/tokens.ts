@@ -134,7 +134,7 @@ export const colorGroups: ColorGroup[] = [
 export const typographyTokens = [
   {
     name: "display",
-    family: "Instrument Serif",
+    family: "Dreamcore",
     stack: "var(--font-display)",
     size: "52px / 80px (lg)",
     weight: "400",

@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Inter, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import { GoogleTagManager } from "@next/third-parties/google";
 import FogBackground from "@/components/FogBackground";
 import SiteHeader from "@/components/SiteHeader";
 import { ViewTransitionsProvider } from "@/components/ViewTransitionsProvider";
 import "./globals.css";
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
-  weight: "400",
-  style: ["normal", "italic"],
-  subsets: ["latin"],
+// Dreamcore: our own display serif, generated in the ai-fonts project (SIL OFL 1.1)
+const dreamcore = localFont({
+  src: [
+    { path: "./fonts/Dreamcore-Regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/Dreamcore-Italic.woff2", weight: "400", style: "italic" },
+  ],
+  variable: "--font-dreamcore",
+  adjustFontFallback: "Times New Roman",
 });
 
 const inter = Inter({
@@ -38,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrumentSerif.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${dreamcore.variable} ${inter.variable} ${geistMono.variable} h-full antialiased`}
     >
       <GoogleTagManager gtmId="GTM-MN2KHLCK" />
       <body className="min-h-full flex flex-col">

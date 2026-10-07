@@ -13,7 +13,7 @@ const pages = [
     href: "/foundations/typography",
     title: "Typography",
     description:
-      "Instrument Serif for anemoia, Inter for the ordinary parts of the dream.",
+      "Dreamcore, our own serif, for anemoia. Inter for the ordinary parts of the dream.",
   },
   {
     href: "/foundations/spacing",

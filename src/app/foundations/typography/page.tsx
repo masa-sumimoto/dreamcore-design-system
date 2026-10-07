@@ -7,7 +7,7 @@ export default function TypographyPage() {
     <>
       <PageIntro
         title="Typography"
-        description="A serif display face evokes anemoia — nostalgia for a time never lived — while the body text stays ordinary, the way most of a dream is ordinary. All faces are served from Google Fonts."
+        description="A serif display face evokes anemoia — nostalgia for a time never lived — while the body text stays ordinary, the way most of a dream is ordinary. The display face, Dreamcore, is our own serif, drawn from code; the body and mono faces come from Google Fonts."
       />
 
       <div className="flex flex-col gap-liminal">
@@ -15,7 +15,7 @@ export default function TypographyPage() {
         <Reveal>
           <section className="rounded-dreamy bg-surface/80 p-10 shadow-float backdrop-blur-sm md:p-14">
             <p className="font-mono text-[11px] tracking-[0.2em] text-rose uppercase">
-              specimen // instrument serif
+              specimen // dreamcore
             </p>
             <p className="mt-6 font-display text-display md:text-display-lg">
               A time <em className="text-primary">never lived</em>

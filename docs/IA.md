@@ -15,7 +15,7 @@ designmd.sh には依存しない。コードが Single Source of Truth であ�
 /                       Landing — 世界観の体現(最大の見せ場)
 ├── /foundations        Foundations index
 │   ├── /foundations/colors        カラー(Pastels / The Void / Functional)
-│   ├── /foundations/typography    タイポグラフィ(Instrument Serif × Inter)
+│   ├── /foundations/typography    タイポグラフィ(Dreamcore × Inter)
 │   ├── /foundations/spacing       スペーシング & リミナルレイアウト
 │   ├── /foundations/effects       Fog blur / Glow / Floating elevation
 │   └── /foundations/motion        Drift easing / duration / モーション原則
@@ -35,7 +35,7 @@ designmd.sh には依存しない。コードが Single Source of Truth であ�
 
 ### `/` Landing
 - Dreamcore の感情(anemoia, comfort + unease)を最初の1画面で伝える
-- Hero: Instrument Serif の大型ディスプレイ + fog gradient + drift motion
+- Hero: Dreamcore の大型ディスプレイ + fog gradient + drift motion
 - Foundations / Components / Showcase への導線
 - ポートフォリオとしての顔でもある
 
@@ -60,11 +60,11 @@ designmd.sh には依存しない。コードが Single Source of Truth であ�
   - Motion: `--ease-drift`, `--ease-fade`
 - Figma Variables へのマッピング: color / typography / spacing / radius は 1:1。effects は Figma styles、motion は prototype 設定 + ドキュメントで表現
 
-## フォント(すべて Google Fonts)
+## フォント(Display は自作の Dreamcore、ほかは Google Fonts)
 
 | 役割 | フォント | 意図 |
 |------|---------|------|
-| Display | Instrument Serif (400 / italic) | Times New Roman 的 anemoia の現代的解釈 |
+| Display | Dreamcore (400 / italic) | 自作のハイコントラスト・セリフ。Times New Roman 的 anemoia の現代的解釈 |
 | Body | Inter | 「夢の中の普通さ」— 旧 DESIGN.md から継続 |
 | Mono | Geist Mono | トークン値・コード表示用 |
 
